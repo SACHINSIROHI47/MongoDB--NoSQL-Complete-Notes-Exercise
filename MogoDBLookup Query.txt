@@ -1,0 +1,10 @@
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}}])
+
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1}])
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1},{$project:{_id:0}}])
+
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1},{$project:{_id:0}}])
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1},{$project:{_id:0,"My Join":0}}])
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1},{$project:{_id:0,"My Join":{_id:0,empid:0}}}])
+db.Emp.aggregate([{$lookup:{from:"Dept",localField:"epid",foreignField:"empid",as:"My Join"}},{$limit:1},{$project:{_id:0,"My Join":0}}])
+
